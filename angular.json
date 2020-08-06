@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "calculadora-npc"
+    }
+  },
+  "defaultProject": "calculadora-npc",
+  "cli": {
+    "analytics": false
+  }
 }

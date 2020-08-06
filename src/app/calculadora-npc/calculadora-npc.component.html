@@ -1,0 +1,26 @@
+<div>
+    <label >Criatura: 
+        <select [(ngModel)]="selectedCriatura">
+            <option value="undefined" disabled selected>Select one creature</option>  
+            <option *ngFor="let criatura of criaturas" [ngValue]="criatura">
+                {{criatura.name}}
+            </option>
+        </select>
+    </label>
+</div>
+<div>
+    <label>Nivel:
+        <input [(ngModel)]="nivel" placeholder="Nivel">
+    </label>
+</div>
+<div>
+    <label>Porcentaje:
+        <input [(ngModel)]="porcentaje" placeholder="Porcentaje">
+    </label>
+</div>
+<div *ngIf="nivel && porcentaje && selectedCriatura">
+    <button (click)='calcular()'>Calcular</button>
+</div>
+<div *ngIf="resultado">
+    <p>Tienes que matar {{resultado | number:'1.2-2'}} {{selectedCriatura.name}} para pasar al siguiente nivel.</p>
+</div>
